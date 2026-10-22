@@ -37,7 +37,9 @@ jobs:
         include:
           # The README advertises Python 3.9+, so the floor is exercised on
           # Linux; the primary platform (Windows) runs the current release.
-          - os: ubuntu-latest
+          # Pinned: ubuntu-latest moved to 26.04, where setup-python has no
+          # 3.9 build, so the floor leg failed before it ran anything.
+          - os: ubuntu-22.04
             python: "3.9"
           - os: ubuntu-latest
             python: "3.12"
